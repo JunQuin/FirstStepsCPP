@@ -24,12 +24,18 @@
     <ClCompile Include="Gerente.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Programador.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Empleado.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Gerente.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Programador.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

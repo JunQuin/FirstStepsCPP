@@ -130,10 +130,12 @@
     <ClCompile Include="ConsoleApplication2 - ORM From Scratch.cpp" />
     <ClCompile Include="Empleado.cpp" />
     <ClCompile Include="Gerente.cpp" />
+    <ClCompile Include="Programador.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Empleado.h" />
     <ClInclude Include="Gerente.h" />
+    <ClInclude Include="Programador.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

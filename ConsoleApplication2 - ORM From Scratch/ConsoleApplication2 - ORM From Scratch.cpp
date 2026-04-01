@@ -3,18 +3,22 @@
 
 #include <iostream>
 #include "Gerente.h"
+#include "Programador.h"
 
 int main()
 {
 
 	Empleado* e1 = new Empleado("Juan", "Pérez", "López", 30, 5, 15000);
 	Empleado* e2 = new Gerente("María", "García", "Hernández", 40, 10, 25000);
+	Empleado* e3 = new Programador("Don", "Torcuato", "De Tonelada", 69, 4, 90000);
 
 	e1->trabajar(); // Llama a la versión de Empleado
 	e2->trabajar(); // Llama a la versión de Gerente (polimorfismo dinámico)
+	e3->trabajar(); // Llama a la versión de Programador (polimorfismo dinámico)
 
 	delete e1;
 	delete e2;
+	delete e3;
 	return 0;
 
 }
