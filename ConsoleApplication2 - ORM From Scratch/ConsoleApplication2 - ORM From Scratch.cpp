@@ -4,21 +4,36 @@
 #include <iostream>
 #include "Gerente.h"
 #include "Programador.h"
+#include <vector>
+#include <memory>
 
 int main()
 {
+	std::vector<std::unique_ptr<Empleado>> empleados;
 
-	Empleado* e1 = new Empleado("Juan", "Pérez", "López", 30, 5, 15000);
-	Empleado* e2 = new Gerente("María", "García", "Hernández", 40, 10, 25000);
-	Empleado* e3 = new Programador("Don", "Torcuato", "De Tonelada", 69, 4, 90000);
 
-	e1->trabajar(); // Llama a la versión de Empleado
-	e2->trabajar(); // Llama a la versión de Gerente (polimorfismo dinámico)
-	e3->trabajar(); // Llama a la versión de Programador (polimorfismo dinámico)
+	empleados.push_back(std::make_unique<Empleado>("Juan", "Perez", "Lopez", 30, 5, 15000));
+	empleados.push_back(std::make_unique<Gerente>("Maria", "Garcia", "Hernandez", 40, 10, 25000));
+	empleados.push_back(std::make_unique<Programador>("Don", "Torcuato", "De Tonelada", 69, 4, 90000));
 
-	delete e1;
-	delete e2;
-	delete e3;
+	for (auto& e : empleados)
+	{
+		e->trabajar(); // Llama a la versión correspondiente según el tipo real del objeto (polimorfismo dinámico
+	}
+
+	// Replace the raw pointers with smart pointers
+	//Empleado* e1 = new Empleado("Juan", "Pérez", "López", 30, 5, 15000);
+	//Empleado* e2 = new Gerente("María", "García", "Hernández", 40, 10, 25000);
+	//Empleado* e3 = new Programador("Don", "Torcuato", "De Tonelada", 69, 4, 90000);
+
+	//e1->trabajar(); // Llama a la versión de Empleado
+	//e2->trabajar(); // Llama a la versión de Gerente (polimorfismo dinámico)
+	//e3->trabajar(); // Llama a la versión de Programador (polimorfismo dinámico)
+
+	//delete e1;
+	//delete e2;
+	//delete e3;
+	
 	return 0;
 
 }

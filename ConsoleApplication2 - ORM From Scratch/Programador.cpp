@@ -11,5 +11,5 @@ Programador::Programador(const std::string& nom, const std::string& apPat, const
 
 // Sobrescritura del método virtual
 void Programador::trabajar() {
-	std::cout << "El programador escribe código y resuelve bugs." << std::endl;
+	std::cout << "El programador escribe codigo y resuelve bugs." << std::endl;
 }
