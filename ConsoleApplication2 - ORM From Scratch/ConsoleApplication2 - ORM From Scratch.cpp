@@ -2,24 +2,35 @@
 //
 
 #include <iostream>
-#include "Gerente.h"
-#include "Programador.h"
 #include <vector>
 #include <memory>
+#include "Gerente.h"
+#include "Programador.h"
+#include "BonoGerente.h"
+#include "BonoProgramador.h"
 
 int main()
 {
 	std::vector<std::unique_ptr<Empleado>> empleados;
 
+	// Debido a la abstraccion del metodo trabajar, no se pueden crear objetos de tipo Empleado, ya que es una clase abstracta
+	// empleados.push_back(std::make_unique<Empleado>("Juan", "Perez", "Lopez", 30, 5, 15000));
+	
+	empleados.push_back(std::make_unique<Gerente>("Maria", "Garcia", "Hernandez", 40, 10, 25000, std::make_unique<BonoGerente>()));
+	empleados.push_back(std::make_unique<Programador>("Don", "Torcuato", "De Tonelada", 69, 4, 90000, std::make_unique<BonoProgramador>()));
 
-	empleados.push_back(std::make_unique<Empleado>("Juan", "Perez", "Lopez", 30, 5, 15000));
-	empleados.push_back(std::make_unique<Gerente>("Maria", "Garcia", "Hernandez", 40, 10, 25000));
-	empleados.push_back(std::make_unique<Programador>("Don", "Torcuato", "De Tonelada", 69, 4, 90000));
+	double totalBonos = 0.0;
 
 	for (auto& e : empleados)
 	{
-		e->trabajar(); // Llama a la versión correspondiente según el tipo real del objeto (polimorfismo dinámico
+		e->MostrarDatos();
+		e->trabajar(); // Llama a la versión correspondiente según el tipo real del objeto (polimorfismo dinámico)
+		double bono = e->calcularBono();
+		std::cout << "Bono calculado: $" << bono << std::endl;
+		totalBonos += bono;
 	}
+
+	std::cout << "Total de bonos a pagar: $" << totalBonos << std::endl;
 
 	// Replace the raw pointers with smart pointers
 	//Empleado* e1 = new Empleado("Juan", "Pérez", "López", 30, 5, 15000);

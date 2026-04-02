@@ -127,14 +127,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BonoGerente.cpp" />
+    <ClCompile Include="BonoProgramador.cpp" />
     <ClCompile Include="ConsoleApplication2 - ORM From Scratch.cpp" />
     <ClCompile Include="Empleado.cpp" />
     <ClCompile Include="Gerente.cpp" />
+    <ClCompile Include="IBonoStrategy.cpp" />
     <ClCompile Include="Programador.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BonoGerente.h" />
+    <ClInclude Include="BonoProgramador.h" />
     <ClInclude Include="Empleado.h" />
     <ClInclude Include="Gerente.h" />
+    <ClInclude Include="IBonoStrategy.h" />
     <ClInclude Include="Programador.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

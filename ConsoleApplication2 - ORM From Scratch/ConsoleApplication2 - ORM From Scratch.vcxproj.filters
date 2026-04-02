@@ -27,6 +27,15 @@
     <ClCompile Include="Programador.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="IBonoStrategy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BonoGerente.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BonoProgramador.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Empleado.h">
@@ -36,6 +45,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Programador.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IBonoStrategy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BonoGerente.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BonoProgramador.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
